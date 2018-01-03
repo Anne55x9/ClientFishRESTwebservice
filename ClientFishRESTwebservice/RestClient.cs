@@ -21,6 +21,7 @@ namespace ClientFishRESTwebservice
 
         public void Start()
         {
+            //Get all catches i konsol med foreach til parameter output.
             var catcheslist = GetCatchesAsync().Result;
             Console.WriteLine("Alle fangster \n");
 
@@ -32,22 +33,25 @@ namespace ClientFishRESTwebservice
             //Console.WriteLine("Alle fangster\n" + String.Join("\n", catcheslist));
 
 
+
+            //Get et catch udfra id;
+
             var oneCatch = GetOneCatchAsync("1").Result;
             Console.WriteLine("En fangst nr" + 1 + "\n" + "Navn:" + oneCatch.Navn + "Art:" + oneCatch.Art + "Sted:" + oneCatch.Sted + "Vægt:" + oneCatch.Veagt + "Uge:" + oneCatch.Uge);
 
 
+            ////Delete et catch udfra id. med tilhørende liste som viser objekt er slettet.
+
             //var deleteCatch = DeleteCatchAsync("4").Result;
             //Console.WriteLine("Fangst nr =" + 4 + " er slettet \n" + "Navn:" + deleteCatch.Navn + "Art:" + deleteCatch.Art + "Sted:" + deleteCatch.Sted + "Vægt:" + deleteCatch.Veagt + "Uge:" + deleteCatch.Uge);
+            //var catcheslistDelete = GetCatchesAsync().Result;
+            //Console.WriteLine("Alle fangster efter slet \n");
+            //foreach (Fangst c in catcheslistDelete)
+            //{
+            //    Console.WriteLine("Navn: " + c.Navn + " Art: " + "" + c.Art + "" + " Vægt: " + c.Veagt + " Sted: " + c.Sted + "" + " Uge: " + c.Uge);
+            //}
 
-
-            var catcheslistDelete = GetCatchesAsync().Result;
-            Console.WriteLine("Alle fangster efter slet \n");
-
-            foreach (Fangst c in catcheslistDelete)
-            {
-                Console.WriteLine("Navn: " + c.Navn + " Art: " + "" + c.Art + "" + " Vægt: " + c.Veagt + " Sted: " + c.Sted + "" + " Uge: " + c.Uge);
-            }
-
+            //Post en fangst på i databasen. 
 
             PostCatchAsync(new Fangst
             {
