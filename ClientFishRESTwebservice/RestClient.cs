@@ -51,7 +51,7 @@ namespace ClientFishRESTwebservice
             //    Console.WriteLine("Navn: " + c.Navn + " Art: " + "" + c.Art + "" + " Vægt: " + c.Veagt + " Sted: " + c.Sted + "" + " Uge: " + c.Uge);
             //}
 
-            //Post en fangst på i databasen. 
+            //Post en fangst på hjemmesiden. 
 
             PostCatchAsync(new Fangst
             {
